@@ -109,8 +109,6 @@ paises_original
 names(paises_original)[11] <- 'cluster'
 paises_original
 
-
 #### Criando um dataset com os paises com maior correlação entre inflação x mortalidade 
-
 maior_mortalidade <- subset(paises_original, cluster == "3")
 maior_mortalidade 
