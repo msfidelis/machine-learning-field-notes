@@ -1,5 +1,7 @@
 ##### Teste de Clustering de Dados - Kmeans
 
+# Exemplo 1
+
 # O exemplo é encontrar uma familiariade entre alunos que possuem uma correlação
 # entre notas de Matemática e Física 
 
@@ -40,7 +42,6 @@ base_cluster_vars
 
 ##### Buscando o numero ideal de Clusters para a amostra
 fviz_nbclust(base_cluster_vars, kmeans, method = "gap_stat")
-
 
 ##### Criando os clusters 
 clus <- kmeans(base_cluster_vars, 3)
