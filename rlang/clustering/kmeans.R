@@ -96,7 +96,8 @@ fviz_nbclust(paises_cluster, kmeans, method = "gap_stat")
 
 # RES: 2
 ##### Criando os clusters 
-paises_kmens_cluster <- kmeans(paises_cluster, 3)
+set.seed(123)
+paises_kmens_cluster <- kmeans(paises_cluster, 3, nstart = 25)
 
 ##### Visualizando os clusters
 fviz_cluster(paises_kmens_cluster, data = paises_cluster)
