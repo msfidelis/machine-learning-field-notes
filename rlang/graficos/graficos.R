@@ -5,7 +5,8 @@
 pacotes <- c(
   "plotly",
   "plyr",
-  "data.frame"
+  "data.frame",
+  "ggplot2"
 )
 
 if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
@@ -90,8 +91,9 @@ ggplot(freq_table_graph, aes(y = orgaos, x = Freq)) +
   theme_classic()
 
 ## Adicionando valores ao grafico
-ggplot(freq_table_graph, aes(y = orgaos, x = Freq), position = "fill") + 
-  geom_bar(color = "black", fill = "grey") +
-  geom_text(aes(label=orgaos), vjust=0) +
-  
-  ggtitle("Utilização de TaxiGov dos Orgãos Públicos") 
+ggplot(freq_table_graph, aes(x=Freq, y=orgaos)) + 
+  geom_bar(stat='identity', color = "black", fill = "gray") +
+  ggtitle("Utilização de TaxiGov dos Orgãos Públicos - 2022-09") +
+  geom_text(aes(label=Freq)) +
+  theme_classic()
+
