@@ -19,6 +19,8 @@ if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
 
 ## DISTRIBUIÇÃO NORMAL
 
+## Ref: http://www.r-tutor.com/elementary-statistics/probability-distributions/normal-distribution
+
 ### Calcular a probabilidde de rendimentos de ações
 ## Analisando investimentos vimos que um retorno médio de uma ação "BANANINHA"
 ## na bolsa tem um retorno de 2.80% dentro de um período
@@ -92,3 +94,4 @@ dist_maior_que_1
 distribuicao < dist_menor_que_5 - dist_maior_que_1
 
 distribuicao * 100
+
