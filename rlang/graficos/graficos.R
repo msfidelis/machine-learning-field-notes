@@ -22,7 +22,7 @@ if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
 }
 
 
-the,ecorridas <- read.csv("taxigov-corridas-2022-09.csv",
+ecorridas <- read.csv("taxigov-corridas-2022-09.csv",
                        sep = ",",
                        dec = ".")
 
@@ -263,7 +263,7 @@ ggplot(freq_table_timeseries, aes(x=data_corrida, y=Freq, group = 1)) +
 
 ## Escala Continua
 
-ggplot(freq_table_timeseries, aes(x = data_corrida, y = Freq, group = 1)) +
+ggplot(freq_table_timeseries, aes(x = data_corrida, y = Freq, group =)) +
   geom_line() + 
   scale_y_continuous() +
   labs(title = "AMZN Line Chart", 
