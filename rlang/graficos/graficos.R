@@ -7,7 +7,8 @@ pacotes <- c(
   "plyr",
   "data.frame",
   "ggplot2",
-  "ggthemes"
+  "ggthemes", 
+  "hrbrthemes"
 )
 
 if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
@@ -21,7 +22,7 @@ if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
 }
 
 
-corridas <- read.csv("taxigov-corridas-2022-09.csv",
+the,ecorridas <- read.csv("taxigov-corridas-2022-09.csv",
                        sep = ",",
                        dec = ".")
 
@@ -201,4 +202,72 @@ ggplot(freq_table_graph_pie, aes(x="", y=Freq, fill=orgaos)) +
                           axis.text = element_blank(),
                           axis.ticks = element_blank(),
                           plot.title = element_text(hjust = 0.5, color = "#666666"))
+
+
+##### Grafico para Time Series 
+
+corridas
+View(corridas)
+
+data_timeseries <- corridas 
+
+# Convertendo o date time para date
+data_timeseries$data_corrida = as.Date(data_timeseries$data_final)
+data_timeseries$data_corrida
+
+# Gerando as tabelas de frequencia baseado na data da corrida
+freq_table_timeseries <- table(data_timeseries$data_corrida)
+freq_table_timeseries
+
+# Transformando a tabela de frequencias em um dataframe
+freq_table_timeseries <- as.data.frame(freq_table_timeseries)
+freq_table_timeseries
+
+# Renomeando a coluna de frequencia de Var1 para data_corrida
+names(freq_table_timeseries)[names(freq_table_timeseries) == "Var1"] <- "data_corrida"
+freq_table_timeseries
+
+## Gráfico básico 
+ggplot(freq_table_timeseries, aes(x=data_corrida, y=Freq, group = 1)) +
+  labs(
+    x = "Data", 
+    y = "Numero de corridas",
+    title = "Utilização de TaxiGov dos Orgãos Públicos"
+  ) +
+  geom_line() 
+
+## Grafico de Timeseries com pontos
+ggplot(freq_table_timeseries, aes(x=data_corrida, y=Freq, group = 1)) +
+  labs(
+    x = "Data", 
+    y = "Numero de corridas",
+    title = "Utilização de TaxiGov dos Orgãos Públicos"
+  ) +
+  geom_point() + 
+  geom_line() 
+
+
+## Customizando os graficos
+ggplot(freq_table_timeseries, aes(x=data_corrida, y=Freq, group = 1)) +
+  labs(
+    x = "Data", 
+    y = "Numero de corridas",
+    title = "Utilização de TaxiGov dos Orgãos Públicos"
+  ) +
+  geom_point() + 
+  geom_line(color="steelblue") + 
+  xlab("") +
+  theme(axis.text.x=element_text(angle=60, hjust=1)) +
+  theme_economist() 
+
+
+## Escala Continua
+
+ggplot(freq_table_timeseries, aes(x = data_corrida, y = Freq, group = 1)) +
+  geom_line() + 
+  scale_y_continuous() +
+  labs(title = "AMZN Line Chart", 
+       subtitle = "Continuous Scale", 
+       y = "Closing Price", x = "") + 
+  theme_economist()
 
