@@ -94,4 +94,3 @@ dist_maior_que_1
 distribuicao < dist_menor_que_5 - dist_maior_que_1
 
 distribuicao * 100
-
