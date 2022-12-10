@@ -77,9 +77,6 @@ probabilidade
 probabilidade * 100
 
 
-
-
-
 # Se houver 12 carros atravessando uma ponte por minuto, em média
 
 ## Qual a probabilidade A probabilidade de haver 16 carros ou menos 
