@@ -110,6 +110,10 @@ dataset_correlacao
 
 # TESTANDO SE AS CORRELAÇÕES SÃO SIGNIFICATIVAS
 
+## 0.7 a 0.9 positivo ou negativo indica uma correlação forte. 
+## 0.5 a 0.7 positivo ou negativo indica uma correlação moderada. 
+## 0.3 a 0.5 positivo ou negativo indica uma correlação fraca.
+
 ## Pearson
 cor.test(
   dataset_correlacao$ipca, 
