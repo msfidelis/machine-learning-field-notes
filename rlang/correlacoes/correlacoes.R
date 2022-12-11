@@ -114,45 +114,60 @@ dataset_correlacao
 ## 0.5 a 0.7 positivo ou negativo indica uma correlação moderada. 
 ## 0.3 a 0.5 positivo ou negativo indica uma correlação fraca.
 
+# P-VALOR
+
+## Em Suma: P-VALOR
+## Aceita-se um valor de corte de P-valor em 5%, ou 0.05
+## Se o p-valor for menor que 0.05, ou 5, pode-se dizer que a estatistica "deu certo"
+## Se o p-valor for maior que 0.05, ou 5, pode-se dizer que a estatística "deu errado"
+
 ## Pearson
 cor.test(
   dataset_correlacao$ipca, 
   dataset_correlacao$inpc, 
-  method = "pearson"
+  method = "pearson",
+  exact=FALSE
 )
 
 cor.test(
   idh_comparacao$expectativa_de_vida, 
   idh_comparacao$expectativa_de_anos_escola, 
-  method = "spearman"
+  method = "pearson",
+  exact=FALSE
 )
 
 ## Spearman
 cor.test(
   dataset_correlacao$ipca, 
   dataset_correlacao$inpc, 
-  method = "spearman"
+  method = "spearman",
+  exact=FALSE
 )
 
 cor.test(
   idh_comparacao$expectativa_de_vida, 
   idh_comparacao$expectativa_de_anos_escola, 
-  method = "spearman"
+  method = "spearman",
+  use = "complete.obs",
+  exact=FALSE
 )
 
 ## Kendall
 cor.test(
   dataset_correlacao$ipca, 
   dataset_correlacao$inpc, 
-  method = "kendall"
+  method = "kendall",
+  use = "complete.obs",
+  exact=FALSE
 )
 
 cor.test(
   idh_comparacao$expectativa_de_vida, 
   idh_comparacao$expectativa_de_anos_escola, 
-  method = "kendall"
+  use = "complete.obs",
+  method = "kendall",
+  exact=FALSE
 )
-
 
 # Correlação Simples
   
