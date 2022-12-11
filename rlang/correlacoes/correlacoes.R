@@ -104,7 +104,6 @@ dataset_correlacao <- as.data.frame(ipca_raw$mes_ano)
 
 dataset_correlacao$inpc <- inpc_raw$variacao_mes
 dataset_correlacao$ipca <- ipca_raw$variacao_mes
-dataset_correlacao
 
 # TESTANDO CORRELAÇÕES
 
