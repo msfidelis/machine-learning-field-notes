@@ -1,4 +1,5 @@
 ano,dimensao,localidade,populacao_branca,populacao_negra,populacao_amarela,populacao_parda,populacao_indigena,populacao_sem_declaracao,populacao_total,populacao_branca_porcentagem,populacao_negra_porcentagem,populacao_amarela_porcentagem,populacao_parda_porcentagem,populacao_indigena_porcentagem,populacao_sem_declaracao_porcentagem
+2010,Brasil,Brasil,46018934,7764533,1072443,38335331,313142,276,93504659,49.22,8.3,1.15,41.0,0.33,0.0
 2010,Região Metropolitana,Manaus - AM,248071,47404,11502,656272,3236,0,966485,25.67,4.9,1.19,67.9,0.33,0.0
 2010,Região Metropolitana,Belém - PA,247878,84605,8441,647451,1460,0,989834,25.04,8.55,0.85,65.41,0.15,0.0
 2010,Região Metropolitana,Macapá - AP,59739,22504,2631,142260,381,0,227515,26.26,9.89,1.16,62.53,0.17,0.0
